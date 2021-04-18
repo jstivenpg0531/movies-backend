@@ -1,5 +1,7 @@
 package co.edu.iudigital.app.service.impl;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +16,11 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private UserRepository userRepository;
 	
+	
 	@Override
 	public void create(User user) {
-		//TODO: implementar 
-		
+	  user.setCreateAt(LocalDateTime.now());
+	  userRepository.save(user);
 	}
 
 	@Override

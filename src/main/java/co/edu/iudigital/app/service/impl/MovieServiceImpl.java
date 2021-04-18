@@ -41,7 +41,7 @@ public class MovieServiceImpl implements MovieService {
 	public void edit(Movie movie, int movieId) {
 		Optional<Movie> existsMovie=movieRepository.findById(movieId);
 		if(existsMovie.isPresent()) {
-			existsMovie.get().setName(movie.getDescription());
+			existsMovie.get().setName(movie.getName());
 			existsMovie.get().setDescription(movie.getDescription());
 			existsMovie.get().setActors(movie.getActors());
 			existsMovie.get().setImage(movie.getImage());
